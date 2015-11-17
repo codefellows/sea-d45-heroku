@@ -10,6 +10,7 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/bear_stream_de
 app.use('/api', bearsRouter);
 app.use('/api', authRouter);
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log('server up');
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log('server up on port: ' + port);
 });
